@@ -6,6 +6,7 @@ import ProfilePage from './pages/ProfilePage'
 import GamePage from './pages/GamePage'
 import ChatPage from './pages/ChatPage'
 import LoginPage from './pages/LoginPage'
+import RoomPage from './pages/RoomPage'
 import Navigation from './components/Navigation'
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 text-white pb-20">
+      <div className="min-h-screen bg-gray-900 text-white">
         <Routes>
           {isAuthenticated ? (
             <>
@@ -21,6 +22,7 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/game" element={<GamePage />} />
               <Route path="/chat" element={<ChatPage />} />
+              <Route path="/room/:roomId" element={<RoomPage />} />
             </>
           ) : (
             <>
