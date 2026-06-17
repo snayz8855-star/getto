@@ -1,17 +1,19 @@
-import express from 'express'
+import express, { Router } from 'express'
+import { authMiddleware } from '../middleware/auth'
+import {
+  getAllRooms,
+  createRoom,
+  getRoom,
+  joinRoom,
+  leaveRoom,
+} from '../controllers/roomController'
 
-const router = express.Router()
+const router: Router = express.Router()
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Get all rooms' })
-})
-
-router.post('/', (req, res) => {
-  res.json({ message: 'Create room' })
-})
-
-router.post('/:roomId/join', (req, res) => {
-  res.json({ message: 'Join room' })
-})
+router.get('/', getAllRooms)
+router.post('/', authMiddleware, createRoom)
+router.get('/:roomId', getRoom)
+router.post('/:roomId/join', authMiddleware, joinRoom)
+router.post('/:roomId/leave', authMiddleware, leaveRoom)
 
 export default router

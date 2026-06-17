@@ -1,17 +1,14 @@
-import express from 'express'
+import express, { Router } from 'express'
+import {
+  loginTelegram,
+  refresh,
+  logout,
+} from '../controllers/authController'
 
-const router = express.Router()
+const router: Router = express.Router()
 
-router.post('/telegram', (req, res) => {
-  res.json({ message: 'Auth endpoint' })
-})
-
-router.post('/refresh', (req, res) => {
-  res.json({ message: 'Refresh endpoint' })
-})
-
-router.post('/logout', (req, res) => {
-  res.json({ message: 'Logout endpoint' })
-})
+router.post('/telegram', loginTelegram)
+router.post('/refresh', refresh)
+router.post('/logout', logout)
 
 export default router

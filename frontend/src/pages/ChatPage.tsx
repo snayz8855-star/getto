@@ -1,29 +1,14 @@
-export default function ChatPage() {
+const ChatPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col p-4">
+    <div className="container mx-auto px-4 py-8 max-w-md">
       <h1 className="text-3xl font-bold mb-6">💬 Чат</h1>
-      
-      <div className="flex-1 bg-gray-800 rounded-lg p-4 mb-4 overflow-y-auto max-h-96">
-        <div className="mb-4">
-          <p className="text-sm text-gray-400">Игрок #1234 • 12:45</p>
-          <p className="text-white">Привет всем! 👋</p>
-        </div>
-        <div className="mb-4">
-          <p className="text-sm text-gray-400">Игрок #5678 • 12:46</p>
-          <p className="text-white">Привет! Как дела?</p>
-        </div>
-      </div>
-
-      <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Напишите сообщение..."
-          className="flex-1 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none"
-        />
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2 rounded-lg transition">
-          Отправить
-        </button>
+      <div className="bg-gray-800 rounded-lg p-8 text-center">
+        <p className="text-gray-400 text-lg mb-4">Чат комнаты появится здесь</p>
+        <div className="text-6xl mb-4">💭</div>
+        <p className="text-lg">Общайтесь с другими игроками в реальном времени</p>
       </div>
     </div>
   )
 }
+
+export default ChatPage
